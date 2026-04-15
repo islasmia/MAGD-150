@@ -1,0 +1,46 @@
+let array1 = [];
+let array2 = [];
+let combinedArray = [];
+let r1, r2, rCombined;
+
+function setup() {
+  
+  createCanvas(600, 600);
+  background(255,50,250);
+
+  for (let i = 0; i < 5; i++) {
+    array1.push(i * 2); 
+    array2.push(i * 3 + 1);
+  }
+
+ 
+  array1.pop(); 
+  array1.push(10); 
+  
+  array2.shift(); 
+  array2.push(20); 
+
+  
+  console.log("Array 1:", array1);
+  console.log("Array 2:", array2);
+
+  combinedArray = array1.concat(array2);
+  console.log("Combined Array:", combinedArray);
+
+  
+  r1 = random(array1);
+  r2 = random(array2);
+  rCombined = random(combinedArray);
+}
+
+function draw() {
+  background(240,45,228,0.85);
+  textSize(24);
+  fill(247,255,159);
+
+  text("Array 1: " + array1.join(", "), 10, 30);
+  text("Array 2: " + array2.join(", "), 10, 60);
+  text("Random 1: " + floor(r1), 10, 90);
+  text("Random 2: " + floor(r2), 10, 120);
+  text("Random 1 & 2: " + floor(rCombined), 10, 150);
+}
