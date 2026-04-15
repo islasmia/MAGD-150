@@ -1,0 +1,28 @@
+let x = 0;
+let y = 200;
+let speed = 24;
+
+function setup() {
+  createCanvas(424, 424);
+}
+
+function draw() {
+  background(126,203,245);
+
+  ellipse(x, y, 50, 50);
+  fill(247,152,248)
+
+  x += speed;
+
+  if (x > width + 50 || x < -50) {
+    y = random(0, height); 
+
+    if (random(1) > 0.5) {
+      x = -50; 
+      speed = random(2, 6); 
+    } else {
+      x = width + 50; 
+      speed = random(-2, -1); 
+    }
+  }
+}
